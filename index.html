@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Where in the world</title>
+    <link rel="stylesheet" href="./styles/normalize.css" />
+    <link rel="stylesheet" href="./styles/styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;600;800&display=swap"
+      rel="stylesheet"
+    />
+    <script defer src="./main.js"></script>
+  </head>
+  <body>
+    <nav class="nav">
+      <h3>Where in the world?</h3>
+      <span>
+        <img
+          src="./images/toggle-darkmode-icon.svg"
+          alt=""
+          class="nav_toggler"
+        />
+        <p class="theme">Dark Mode</p>
+      </span>
+    </nav>
+
+    <main class="app container">
+      <div class="select_grid">
+        <div class="input_container">
+          <img src="./images/search-icon-light-mode.svg" alt="" />
+          <input placeholder="Search for a country" type="text" class="input" />
+        </div>
+
+        <div class="select">
+          <div class="show-filter">
+            <p>Filter by Region</p>
+            <img
+              class="drop-down-btn"
+              src="./images/drop-down-arrow-black.svg"
+              alt=""
+            />
+          </div>
+          <ul class="drop-downs hidden">
+            <li class="continent">All</li>
+            <li class="continent">Africa</li>
+            <li class="continent">Americas</li>
+            <li class="continent">Asia</li>
+            <li class="continent">Europe</li>
+            <li class="continent">Oceania</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="countries container"></div>
+    </main>
+
+    <div class="country_modal container">
+      <button class="btn_close">&#8592; Back</button>
+      <div class="modal_grid"></div>
+    </div>
+  </body>
+</html>

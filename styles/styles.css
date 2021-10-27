@@ -1,0 +1,266 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+:root {
+  --color-background: hsl(0, 0%, 98%);
+  --color-text: hsl(200, 15%, 8%);
+  --color-element: hsl(0, 0%, 100%);
+  --color-input: hsl(0, 0%, 52%);
+  --color-link: blue;
+  --color-border: hsl(207, 26%, 17%);
+}
+
+:root.dark-mode {
+  --color-background: hsl(207, 26%, 17%);
+  --color-text: hsl(0, 0%, 100%);
+  --color-element: hsl(209, 23%, 22%);
+  --color-input: hsl(0, 0%, 52%);
+  --color-link: red;
+  --color-border: hsl(0, 0%, 98%);
+}
+
+body {
+  font-family: "Nunito Sans", sans-serif;
+  background-color: var(--color-background);
+  font-size: 1.8rem;
+  color: var(--color-text);
+}
+
+h3 {
+  font-size: 2rem;
+}
+
+.container {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.hidden {
+  display: none;
+}
+
+/* NAVIGATION BAR */
+.nav {
+  background: var(--color-element);
+  padding: 3rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 4rem;
+}
+
+.nav span {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.nav span img {
+  height: 2rem;
+}
+
+.nav span img.dark-mode {
+  content: url(../images/toggle-lightmode-icon.svg);
+}
+
+/* INPUT */
+.input_container {
+  width: 100%;
+  background: var(--color-element);
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  padding: 2rem;
+  border-radius: 10px;
+  margin-bottom: 5rem;
+}
+
+.input {
+  background: var(--color-element);
+  font-size: 1.8rem;
+  width: 100%;
+  border: none;
+  outline: none;
+  color: var(--color-text);
+}
+
+/* SELECT */
+.select {
+  position: relative;
+}
+
+.show-filter,
+.drop-downs {
+  background: var(--color-element);
+  width: 200px;
+  padding: 2rem;
+}
+
+.show-filter {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.drop-downs {
+  list-style: none;
+  position: fixed;
+}
+
+.drop-down-btn.dark-mode {
+  content: url(../images/drop-down-arrow-white.svg);
+}
+
+.drop-downs li {
+  margin-bottom: 0.5rem;
+  cursor: pointer;
+}
+
+/* COUNTRIES */
+.countries {
+  margin-top: 5rem;
+  display: grid;
+  justify-items: center;
+  gap: 3rem;
+  opacity: 0;
+  transition: opacity 1s;
+}
+
+.country {
+  background-color: var(--color-element);
+  box-shadow: 0 2rem 5rem 1rem rgba(0, 0, 0, 0.1);
+  font-size: 1.8rem;
+  width: 90%;
+  border-radius: 0.7rem;
+  cursor: pointer;
+}
+
+.country_img {
+  width: 100%;
+  height: 17rem;
+  object-fit: cover;
+  background-color: var(--color-element);
+  border-top-left-radius: 0.7rem;
+  border-top-right-radius: 0.7rem;
+}
+
+.country_data {
+  text-align: left;
+  padding: 3rem;
+}
+
+.country_name {
+  font-size: 2.7rem;
+  margin-bottom: 0.7rem;
+}
+
+.country_region {
+  font-size: 1.4rem;
+  margin-bottom: 2.5rem;
+  text-transform: uppercase;
+}
+
+.country_row:not(:last-child) {
+  margin-bottom: 1rem;
+}
+
+.country_row span {
+  display: inline-block;
+  margin-right: 2rem;
+  font-size: 2.4rem;
+}
+
+.more-info {
+  color: var(--color-link);
+}
+
+/* COUNTRY DETAILS */
+.country_modal {
+  display: none;
+}
+
+.modal_flag {
+  width: 100%;
+  height: 25rem;
+  object-fit: cover;
+  background-color: var(--color-element);
+  border-top-left-radius: 0.7rem;
+  border-top-right-radius: 0.7rem;
+  margin-bottom: 5rem;
+}
+
+.btn_close {
+  margin-bottom: 5rem;
+  padding: 1rem 2rem;
+  border-radius: 10px;
+  background-color: var(--color-element);
+  box-shadow: 0 2rem 5rem 1rem rgba(0, 0, 0, 0.1);
+  border: 0;
+  outline: none;
+  cursor: pointer;
+  color: var(--color-text);
+}
+
+.modal_name,
+.bc {
+  margin-bottom: 1rem;
+  text-transform: capitalize;
+  color: var(--color-text);
+}
+
+.main-info {
+  display: grid;
+  gap: 2rem 4rem;
+  margin-bottom: 2rem;
+}
+
+.main-info p {
+  line-height: 1.8;
+  color: var(--color-text);
+}
+
+@media screen and (min-width: 1024px) {
+  .nav {
+    padding: 3rem 6rem;
+  }
+
+  .countries {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .select_grid {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .select {
+    width: 40%;
+    justify-self: end;
+  }
+
+  .input_container {
+    width: 50%;
+    margin-bottom: 0;
+  }
+
+  .modal_grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-items: center;
+    align-items: center;
+  }
+
+  .main-info {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
