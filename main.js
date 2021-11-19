@@ -11,6 +11,9 @@ const app = document.querySelector(".app");
 const modal = document.querySelector(".country_modal");
 const btnClose = document.querySelector(".btn_close");
 
+let page = 1;
+const resultPerPage = 10;
+
 //Functions
 // GET COUNTRY DETAILS
 const getCountryDetail = function (data) {
@@ -87,8 +90,9 @@ const renderCountry = function (countries) {
 const getAllCountries = async function () {
   try {
     const res = await fetch(`https://restcountries.com/v2/all`);
+
     const data = await res.json();
-    console.log(data);
+
     renderCountry(data);
   } catch (err) {
     console.error(err);
@@ -107,7 +111,7 @@ btnClose.addEventListener("click", () => {
 
 //SEARCH INPUT
 input.addEventListener("input", function (e) {
-  const { value } = e.target;
+  const value = e.target.value;
   const countryName = document.querySelectorAll(".country_name");
 
   countryName.forEach((name) => {
