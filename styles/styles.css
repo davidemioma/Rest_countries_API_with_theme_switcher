@@ -81,7 +81,6 @@ h3 {
   gap: 2rem;
   padding: 2rem;
   border-radius: 10px;
-  margin-bottom: 5rem;
 }
 
 .input {
@@ -125,11 +124,15 @@ h3 {
   cursor: pointer;
 }
 
+.select_grid {
+  display: grid;
+  gap: 4rem 0;
+}
+
 /* COUNTRIES */
 .countries {
   margin-top: 5rem;
   display: grid;
-  justify-items: center;
   gap: 3rem;
   opacity: 0;
   transition: opacity 1s;
@@ -139,7 +142,6 @@ h3 {
   background-color: var(--color-element);
   box-shadow: 0 2rem 5rem 1rem rgba(0, 0, 0, 0.1);
   font-size: 1.8rem;
-  width: 90%;
   border-radius: 0.7rem;
   cursor: pointer;
 }
@@ -181,6 +183,53 @@ h3 {
 
 .more-info {
   color: var(--color-link);
+}
+
+/* PAGINATION */
+.pagination {
+  margin-top: auto;
+  padding: 3rem 0;
+}
+
+.pagination_btn {
+  color: var(--color-text);
+  font-size: 1.3rem;
+  font-weight: 600;
+  border: none;
+  background-color: var(--color-element);
+  box-shadow: 0 2rem 5rem 1rem rgba(0, 0, 0, 0.1);
+  padding: 0.8rem 1.2rem;
+  border-radius: 10rem;
+  cursor: pointer;
+  display: flex;
+  outline: none;
+  align-items: center;
+  transition: all 0.2s;
+}
+
+.pagination_btn svg {
+  height: 1.6rem;
+  width: 1.6rem;
+  fill: currentColor;
+  margin: 0 0.2rem;
+}
+
+.pagination_btn span {
+  margin: 0 0.4rem;
+}
+
+.pagination::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.pagination_btn-prev {
+  float: left;
+}
+
+.pagination_btn-next {
+  float: right;
 }
 
 /* COUNTRY DETAILS */
@@ -238,19 +287,15 @@ h3 {
   }
 
   .select_grid {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    grid-template-columns: repeat(2, 1fr);
   }
 
   .select {
-    width: 40%;
     justify-self: end;
   }
 
   .input_container {
-    width: 50%;
-    margin-bottom: 0;
+    align-self: start;
   }
 
   .modal_grid {
